@@ -1,0 +1,29 @@
+parser: babel-eslint
+env:
+  node: true
+  jest: true
+parserOptions:
+  ecmaFeatures:
+    classes: true
+globals:
+  logger: true
+plugins:
+  - standard
+  - security
+extends:
+  - eslint:recommended
+  - plugin:security/recommended
+  - plugin:node/recommended
+  - standard
+rules:
+  class-methods-use-this: 0
+  max-len: ["error", {
+    "code": 100,
+    "ignoreTemplateLiterals": true,
+    "ignoreStrings": true,
+    "ignoreRegExpLiterals": true
+  }]
+  sort-keys: [1, "asc", { "caseSensitive": true, "natural": true }]
+  no-underscore-dangle: 0
+  no-console: 2
+  camelcase: 0
